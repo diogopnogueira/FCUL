@@ -1,0 +1,15 @@
+/***************************************************************************
+ *
+ *  Seguranca e Confiabilidade 2018/19
+ *  Grupo SegC-017
+ *  Diogo Nogueira 49435
+ *  Filipe Silveira 49506
+ *  Filipe Capela 50296
+ *
+ ***************************************************************************/
+
+grant codeBase "file:\SegC-grupo17-proj1\MsgFile.java" {
+  permission java.io.FilePermission "file:\SegC-grupo17-proj1\clientes\*", "read, write";
+  permission java.net.SocketPermission "*", "connect, resolve";
+};
+

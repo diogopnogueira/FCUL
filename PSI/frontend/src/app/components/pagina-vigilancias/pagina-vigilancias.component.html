@@ -1,0 +1,42 @@
+<div align="center">
+  <mat-card>
+    <h3>
+      Vigilancias
+    </h3>
+    <br>
+    <section class="mat-typography">
+      <h3>
+        <button mat-raised-button color="primary" (click)=getDocentes()>Mostrar vigilâncias</button>
+      </h3>
+    </section>
+  </mat-card>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="mat-column-right"> Docente </th>
+      <td mat-cell *matCellDef="let docente" class="mat-column-right"> {{docente.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef class="mat-column-right"> Número de Vigilâncias </th>
+      <td mat-cell *matCellDef="let docente" class="mat-column-right"> {{docente.numeroVigilancias}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-card>
+    <mat-paginator #paginator [pageSize]="7" [pageSizeOptions]="[7, 14, 21]">
+    </mat-paginator>
+  </mat-card>
+
+
+  <mat-card>
+    <h3>
+      <button mat-raised-button color="accent" [routerLink]="['/paginaGestor']">Voltar Atrás</button>
+    </h3>
+  </mat-card>
+
+
+</div>

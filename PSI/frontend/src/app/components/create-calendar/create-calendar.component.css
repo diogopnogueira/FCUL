@@ -1,0 +1,74 @@
+.gerar-calendario {
+  padding: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.inputfile + label {
+  background-color: #f4f4f4;
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: black;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: -100px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.inputfile + label:hover {
+  background-color: #424eba;
+  color: white;
+}
+
+.botoes {
+  vertical-align: middle;
+  margin-left: 150%;
+  transform: translate(30px, -40px);
+  margin-top: 10px;
+}
+
+.linha {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin-left: 15%;
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-right: 15%;
+}
+
+.divider {
+  width: 30%;
+  display: inline-block;
+}
+
+.semestre {
+  margin-top: 23px;
+}
+
+.semestreTitulo {
+  margin-top: 20px;
+}
+
+.anoTitulo {
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  font-size: large;
+  padding: 10px 32px;
+}

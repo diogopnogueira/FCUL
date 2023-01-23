@@ -1,0 +1,58 @@
+<div>
+  <mat-card align="center">
+    <h3 align="center">Lista de pedidos de Troca</h3>
+    <br>
+    <button mat-raised-button color="primary" (click)=fetchPedidosDeTrocaBom()>Mostrar os Pedidos de Troca</button>
+    <br>
+    <br>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+
+    <table mat-table [dataSource]="arrayTrocasBom">
+
+      <ng-container matColumnDef="Vigilante">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Vigilante</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.nomeDocente}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Exame">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Disciplina</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.nomeExame}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Dia">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Dia Exame</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.diaExame}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Acoes">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Acoes</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          <button mat-button color="primary" (click)="adicionarATroca(docente._id, element._id)">Adicionar ao pedido de
+            troca</button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card>
+  <mat-card>
+      <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]">
+      </mat-paginator>
+    </mat-card>
+
+    <mat-card>
+        <h3>
+          <button mat-raised-button color="accent" [routerLink]="['/paginaGestor']">Voltar Atrás</button>
+        </h3>
+      </mat-card>
+</div>

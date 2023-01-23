@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+
+.nome {
+  background-color: white;
+  color: black;
+  width: 50%;
+  padding: 12px 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-color: rgb(175, 175, 175);
+  text-align: center;
+  margin-left: 25%;
+}
+
+.ano {
+  background-color: white;
+  color: black;
+  width: 50%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: 25%;
+}

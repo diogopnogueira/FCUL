@@ -1,0 +1,55 @@
+<div align="center">
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h1>
+        <strong>Selecione o seu login!</strong>
+      </h1>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <div class="row">
+
+      <div class="column">
+        <div class="list-container">
+          <p> <strong>Docente</strong>: Selecione o seu nome</p>
+          <dx-list #list [dataSource]="docentes" [height]="500" [searchEnabled]="true" searchExpr="nome"
+            searchMode="contains">
+            <div *dxTemplate="let docente of 'item'">
+              <button type="submit" (click)="checkVigilancias(docente._id)" mat-raised-button color="primary">
+                <div>{{docente.nome}}</div>
+              </button>
+            </div>
+          </dx-list>
+        </div>
+      </div>
+
+
+      <div class="column">
+
+        <div class="list-container">
+          <p> <strong>Regente</strong>: Selecione o seu nome</p>
+          <dx-list #list [dataSource]="regentes" [height]="500" [searchEnabled]="true" searchExpr="nome"
+            searchMode="contains">
+            <div *dxTemplate="let docente of 'item'">
+              <button type="submit" (click)="checkRegente(docente._id)" mat-raised-button color="primary">
+                <div>{{docente.nome}}</div>
+              </button>
+            </div>
+          </dx-list>
+        </div>
+      </div>
+      <div class="column">
+        <div class="gestor">
+            <p>
+                <strong>Gestor Sistema</strong>:
+                <br>
+                <br><br><br>
+                <button mat-raised-button color="primary" [routerLink]="['/paginaGestor']">Entrar</button>
+              </p>
+             <!-- <button mat-raised-button color="primary" [routerLink]="['/paginaGestor']">Gestor Sistema</button> -->
+        </div>
+        </div>
+    </div>
+  </mat-card>
+</div>

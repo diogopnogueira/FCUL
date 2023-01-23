@@ -1,0 +1,86 @@
+<mat-card>
+  <h2 align-center>
+    <input type="text" class="nome" [ngModel]="nomeDocente" disabled size="40" />
+  </h2>
+  <br>
+  <h5>
+    Vigilâncias atribuídas: {{numeroVigilancias}}
+  </h5>
+  <h5>
+    Média de vigilâncias no seu departamento: {{media}}
+  </h5>
+</mat-card>
+<br>
+<mat-card>
+
+  <h3>
+    <button id='1819' mat-raised-button color="primary" (click)="changeViewBotoes('Ano 2018/2019')">
+      Vigilâncias Ano 2018/2019
+    </button>
+  </h3>
+  <h3>
+    <button id='1718' mat-raised-button color="primary" (click)="changeViewBotoes('Ano 2017/2018')">
+      Vigilâncias Ano 2017/2018
+    </button>
+  </h3>
+  <h3>
+    <button id='1617' mat-raised-button color="primary" (click)="changeViewBotoes('Ano 2016/2017')">
+      Vigilâncias Ano 2016/2017
+    </button>
+  </h3>
+  <br>
+
+
+</mat-card>
+<br>
+<mat-card>
+    <h3>
+        <button id='mostra' mat-raised-button color="warn" (click)="fetchVigilanciasBoas()">Mostrar
+          Tabela</button>
+      </h3>
+  <h3 align-center class="ano">
+    {{ano}}
+  </h3>
+<br>
+</mat-card>
+
+<div id=tabela style=display:none>
+  <table mat-table [dataSource]="dataSourceBom" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Docente </th>
+      <td mat-cell *matCellDef="let vigilancia">
+        {{vigilancia.nomeDocente}}
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef> Número de Vigilâncias Total </th>
+      <td mat-cell *matCellDef="let vigilancia"> {{vigilancia.numeroTotalVigilancias}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="semestre1">
+      <th mat-header-cell *matHeaderCellDef>Vigilâncias 1º Semestre</th>
+      <td mat-cell *matCellDef="let vigilancia"> {{vigilancia.numeroVigilanciasSemestre1}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="semestre2">
+      <th mat-header-cell *matHeaderCellDef>Vigilâncias 2º Semestre</th>
+      <td mat-cell *matCellDef="let vigilancia"> {{vigilancia.numeroVigilanciasSemestre2}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+    <mat-paginator #paginator [pageSize]="7" [pageSizeOptions]="[7, 14, 21]">
+    </mat-paginator>
+</div>
+<br>
+<mat-card>
+  <h3>
+    <button mat-raised-button color="accent" (click)="voltaAtras()">Voltar Atrás</button>
+  </h3>
+</mat-card>

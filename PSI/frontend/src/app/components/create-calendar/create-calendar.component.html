@@ -1,0 +1,108 @@
+<!-- add the shim first -->
+<script type="text/javascript" src="shim.min.js"></script>
+<!-- after the shim is referenced, add the library -->
+<script type="text/javascript" src="xlsx.full.min.js"></script>
+<script lang="javascript" src="dist/xlsx.full.min.js"></script>
+<script src="ssf.js"></script>
+<div class="gerar-calendario">
+  <mat-card>
+    <div class="titulo" >
+      <h3 align="center">
+        Criar Calendário
+      </h3>
+      <br>
+    </div>
+
+    <br>
+    <div class="linha">
+      <div class="formulario">
+        <h6>
+          1º - Selecione o Ano e o Semestre:
+        </h6>
+        <br>
+        <h5>Ano Letivo</h5>
+        <div class="anoTitulo"></div>
+        <mat-form-field>
+          <mat-label>Ano</mat-label>
+          <mat-select [(value)]="selectedAno">
+            <mat-option value='2019/2020'>2019/2020</mat-option>
+            <mat-option value='2018/2019'>2018/2019</mat-option>
+            <mat-option value='2017/2018'>2017/2018</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="semestre">
+          <h5>Semestre</h5>
+          <div class="semestreTitulo"></div>
+          <mat-form-field>
+            <mat-label>Semestre</mat-label>
+            <mat-select [(value)]="selectedSemestre">
+              <mat-option value='1º Semestre'>1º Semestre</mat-option>
+              <mat-option value='2º Semestre'>2º Semestre</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="upload">
+        <h6>
+          2º - Selecione os ficheiros:
+        </h6>
+        <br>
+        <h5>Ficheiro Docentes:</h5>
+        <div class="botoes">
+          <input type="file" name="file1" id='file1' class="inputfile" accept=".xlsx"
+            (change)="getFiles('docentes', $event)" />
+          <label for="file1">{{nomeFicheiro1}}</label>
+        </div>
+
+
+        <h5>Ficheiro Categorias:</h5>
+        <div class="botoes">
+          <input type="file" name="file2" id='file2' class="inputfile" accept=".xlsx"
+            (change)="getFiles('categorias', $event)" />
+          <label for="file2">{{nomeFicheiro2}}</label>
+        </div>
+
+        <h5>Ficheiro Exames:</h5>
+        <div class="botoes">
+          <input type="file" name='file3' id='file3' class="inputfile" accept=".xlsx"
+            (change)="getFiles('exames', $event)" />
+          <label for="file3">{{nomeFicheiro3}}</label>
+        </div>
+
+        <h5>Ficheiro Salas:</h5>
+        <div class="botoes">
+          <input type="file" name="file4" id='file4' class="inputfile" accept=".xlsx"
+            (change)="getFiles('salas', $event)" />
+          <label for="file4">{{nomeFicheiro4}}</label>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-divider></mat-divider>
+
+  <div>
+    <br>
+    <mat-card align="center">
+      <button mat-raised-button id="botaoGerar" type="submit" color="primary" (click)="createCalendar()" disabled>Gerar
+        Calendario</button>
+      <div id="popup1" style="display: none">
+        <br>
+        <h3>A gerar calendário... Por favor aguarde.</h3>
+      </div>
+      <div id="popup2" style="display: none">
+        <h3>Calendário Gerado!</h3>
+      </div>
+
+    </mat-card>
+    <br>
+    <mat-card>
+      <h3>
+        <button mat-raised-button color="accent" [routerLink]="['/paginaGestor']" id='voltar'>Voltar Atrás</button>
+      </h3>
+    </mat-card>
+  </div>
+</div>

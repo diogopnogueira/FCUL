@@ -1,0 +1,75 @@
+<div>
+  <mat-card>
+    <h2 align-center>
+      <input type="text" [ngModel]="docente?.nome" (ngModelChange)="docente.nome = $event " disabled size="40" />
+    </h2>
+    <h5>Selecione o semestre:</h5>
+    <button mat-raised-button class="botaoSemestre" color="primary" (click)=fetchVigilanciasBoas(1)>Vigilancias 1º
+      Semestre</button>
+    <div class="divider"></div>
+    <button mat-raised-button class="botaoSemestre" color="primary" (click)=fetchVigilanciasBoas(2)>Vigilancias 2º
+      Semestre</button>
+    <br>
+    <br>
+    <br>
+    <h3>Lista de vigilâncias</h3>
+    <mat-divider></mat-divider>
+    <br>
+    <table mat-table [dataSource]="vigilanciasBoas">
+
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Codigo</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.codigo}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="disciplina">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Disciplina</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.disciplina}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="epoca">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Epoca</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.epoca}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataExame">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Data Inicio</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.dataExame}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="salas">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Salas</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          {{element.salas}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right">Acoes</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          <button mat-button color="primary" (click)="pedirTroca(docente._id, element.idExame)">Pedir Troca</button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator #paginator [pageSize]="7" [pageSizeOptions]="[7, 14, 21]">
+      </mat-paginator>
+  </mat-card>
+  <mat-card>
+    <h3>
+      <button mat-raised-button color="accent" (click)="voltaAtras()">Voltar Atrás</button>
+    </h3>
+  </mat-card>
+
+</div>

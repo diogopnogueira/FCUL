@@ -1,0 +1,35 @@
+<div>
+
+  <mat-card>
+    <h2>
+        <input type="text" class="nome" [ngModel]="this.nomeDocente" disabled size="40" />
+    </h2>
+    <h4 align="center">
+        <input type="text" class="ola" style="text-align: center" [ngModel]="this.podeVigiar" disabled size="50" />
+    </h4>
+      
+    <h3>
+      Menu Docente
+    </h3>
+  </mat-card>
+  <br>
+  <mat-card align="center">
+    <section class="mat-typography">
+      <h3>
+        <button mat-raised-button color="primary" (click)="checkVigilancias()">Minhas Vigilancias</button>
+      </h3>
+
+      <h3>
+        <button mat-raised-button color="primary" (click)="checkVigilanciasDocente()">Outras Vigilâncias</button>
+      </h3>
+    </section>
+    <mat-divider></mat-divider>
+  </mat-card>
+
+  <mat-card align="center">
+
+    <h3>
+      <button mat-raised-button color="accent" [routerLink]="['/paginaPrincipal']">Voltar Atrás</button>
+    </h3>
+  </mat-card>
+</div>
