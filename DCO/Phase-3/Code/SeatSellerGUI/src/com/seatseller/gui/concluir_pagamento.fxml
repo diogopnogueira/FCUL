@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="372.0" prefHeight="500.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seatseller.gui.ConcluirPagamentoController">
+   <children>
+    <TitledPane fx:id="p1" collapsible="false" expanded="true" text="Reserva">
+      <content>
+        <AnchorPane>
+               <children>
+                  <VBox>
+                     <children>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Label text="Codigo de Reserva: " />
+                              <TextField fx:id="codigo" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#indicarCodigo" text="Seguinte" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+      </content>
+    </TitledPane>
+    <TitledPane fx:id="p2" animated="false" collapsible="false" expanded="false" text="Cartão de Crédito">
+      <content>
+        <AnchorPane prefHeight="180.0" >
+               <children>
+                  <VBox>
+                     <children>
+                     <FlowPane alignment="CENTER">
+                           <children>
+                              <Label text="Valor a pagar: " />
+                              <Label fx:id="valorAPagar" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Label text="Cartão de Crédito" />
+                              <TextField fx:id="cc" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Label text="CCV2" />
+                              <TextField fx:id="ccv2" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Label text="Data de Validade (MM/AA)" />
+                              <TextField fx:id="mm" prefWidth="40.0" />
+                              <Pane prefWidth="20.0" />
+                              <TextField fx:id="aa" prefWidth="40.0" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#validar" text="Validar" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </TitledPane>
+  
+   </children>
+</VBox>
