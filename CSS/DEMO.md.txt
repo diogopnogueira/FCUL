@@ -1,0 +1,108 @@
+# Demo
+
+This document provides a step-by-step demonstration example to all software that
+was previouly installed and configured as described in the
+[requirements](REQUIREMENTS.md) document.
+
+Clone a demonstration project by executing the follow command on the command
+line `git clone git@git.alunos.di.fc.ul.pt:css000/css_meta5.git` and then on
+Eclipse, File -> Import -> Maven -> Existing Maven Projects and follow the rest
+of the wizard.
+
+After importing the project, check the JDK version of `espacoges-web-client` and
+and `espacoges-gui-client`. To do so, click on `espacoges-web-client` project
+-> `Libraries` tab, and verify the `JRE System Library`. If it is not pointing
+to the version installed and configured (as described in the
+[requirements](REQUIREMENTS.md) document) update it with the `Edit` option.
+Repeat this check for `espacoges-gui-client`.
+
+
+## Compile the main module and all sub-modules
+
+After importing the project to Eclipse, all modules might not be compiled by
+default (it depends on your configurations). To do so:
+
+- Right click on the main module, i.e., `espacoges` project
+- Run As -> Maven clean
+- Run As -> Maven build... and in Goals write "package" and then press Run
+  (The stdout of this command is redirected to the `Console` tab. In case
+  Eclipse managed to successfully compile all modules, you should see.)
+
+Analyse the stdout of the last command in the `Console` tab and verify that the
+compilation went well, look for the following message "BUILD SUCCESS" at the
+end of the stdout.
+
+### Maven vs Eclipse
+
+Eclipse's workspace is not always synced with a maven build. I.e., it might
+happen that `Run As -> Maven build...` managed to compile the project
+successfully, but Eclipse's workspace complains that there are some compilation
+errors. To force Eclipse to sync with the latest maven build, execute the
+following set of steps:
+
+- Right click on the main module, i.e., `espacoges` project
+- Maven -> Update Project
+- Select all `espacoges` modules and then OK
+
+If maven does manage to compile the `espacoges` project and the Eclipse's
+workspace keeps reporting compilation issues (even after executing the above
+steps), remove the project and re-import it to Eclipse.
+
+
+
+## JPA Diagram Editor
+
+As an additional step, check if the
+[JPA Diagram Editor](https://wiki.eclipse.org/JPA_Diagram_Editor_Project)
+is working properly on Eclipse. To do so, open the `business/Customer` class
+from the `espacoges-business` project and verify that the `JPA Structure` tab
+shows the class `Customer` with five row, e.g., `id`, `vatNumber`. In addition
+to this, on eclipse, right click on `espacoges-business` -> `JPA Tools` ->
+`Open Diagram`. Then, right click in the diagram window and
+`Show all Persistent Types`. If some entities appear in the diagram window, the
+[JPA Diagram Editor](https://wiki.eclipse.org/JPA_Diagram_Editor_Project) and
+[Dali Java Persistence Tools](https://www.eclipse.org/webtools/dali) have been
+properly configured.
+
+
+
+## WebClient
+
+Once all projects compile with success, run the webclient on Eclipse:
+
+- Right click on `espacoges-web-client` project
+- Then Run As -> Run on Server
+
+Note: The first Eclipse asks to configure a server, more information on that
+in [here (step-4)](https://www.baeldung.com/eclipse-wildfly-configuration#configuring-the-application-server-in-eclipse).
+Select `WildFly 10x` as it is the version installed and configured as described
+in the [requirements](REQUIREMENTS.md) document.
+
+If everything goes well, Eclipse should open a webview and load
+http://localhost:8080/espacoges-web-client/.
+
+
+## GUIClient
+
+To run the `espacoges-gui-client` execute the following on the command line:
+
+On Windows:
+```
+cd __path_to_WildFly_installation__\bin
+appclient.bat __path_to_css_1819_meta5_project\espacoges-ear\target\espacoges-ear-1.0.ear#espacoges-gui-client.jar
+```
+
+On Unix-based Operating System (i.e., Linux, Solaris and Mac OS X):
+```bash
+cd __path_to_WildFly_installation__/bin
+./appclient.sh __path_to_css_1819_meta5_project__/espacoges-ear/target/espacoges-ear-1.0.ear#espacoges-gui-client.jar
+```
+
+A graphical user interface of the client should appear in your screen after a
+few seconds. If not, try to understand the messages reported by the `appclient`
+script executed in this last step and try to fix the issue.
+
+
+Keep in mind that most of the problems you might face are due to the Java
+version enabled in your system. Triple check you have the right version
+installed and configured!

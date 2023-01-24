@@ -1,0 +1,267 @@
+# Requirements
+
+This document provides a step-by-step on how to install and configure the
+different tools required for CSS. In detail, one would need to install and
+configure the following:
+
+- [Git](https://git-scm.com)
+- Java EE
+- [Apache Maven](https://maven.apache.org)
+- [WildFly](https://wildfly.org)
+- Eclipse + Git + SonarLint + JBoss Tools Plugin + JPA Diagram Editor
+
+
+## Git
+
+[Git](https://git-scm.com) is a free and open source distributed version control
+system designed to handle everything from small to very large projects with
+speed and efficiency.
+
+### Installation
+
+- [Unix / Linux](https://git-scm.com)
+- [MacOS v2.23.0](https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect)
+- [Windows v2.25.0](https://github.com/git-for-windows/git/releases/download/v2.25.0.windows.1/Git-2.25.0-64-bit.exe)
+
+### Configuration
+
+On Unix-based Operating System (i.e., Linux, Solaris and Mac OS X) open a
+terminal window and run the following command `git --version`.
+
+On Windows, open a new command prompt (Winkey + R then type cmd) and run
+`git --version` to verify the installation.
+
+
+## Java EE
+
+[Oracle JDK v8u212-b10](https://github.com/frekele/oracle-java/releases/tag/8u212-b10)
+- [Linux](https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-x64.tar.gz)
+- [MacOS](https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-macosx-x64.dmg)
+- [Windows](https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-windows-x64.exe)
+
+### Installation
+
+On Windows execute the `jdk-8u212-windows-x64.exe`.
+
+On MacOS execute the `jdk-8u212-macosx-x64.dmg`.
+
+On Unix-based Operating System (e.g., Linux) unpack the `jdk-8u212-linux-x64.tar.gz`.
+
+### Configuration
+
+On Unix-based Operating System (i.e., Linux, Solaris and Mac OS X) add the
+unpacked distribution's directory to your user PATH environment variable by
+executing the following commands:
+```bash
+# Unix / Linux
+export JAVA_HOME=<__installed_distribution_directory__>
+export PATH=$JAVA_HOME/bin:$PATH
+java -version # expected to return javac 1.8.0_212
+
+# MacOS
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+java -version # expected to return javac 1.8.0_212
+```
+Note: the exported environment variables only live in the current session of
+your terminal window. If you open a new terminal, restart the computed, etc, you
+would need to export the variables again. To avoid that, you can copy the two
+`export` commands to the bottom of your `~/.bashrc` file. Then, every time a new
+terminal window is created, or even if you restart your computer, the Java
+available to the system would be the one defined in the export command.
+
+On Windows, add the distribution's directory to your user PATH environment
+variable by opening up the system properties (WinKey + Pause), selecting the
+"Advanced" tab, and the "Environment Variables" button, then adding to the PATH
+variable in the system variables the value, e.g.,
+`C:\<__installed_distribution_directory__>\jdk1.8.0_212.jdk\bin`. Make sure the
+new entry is the first one in the list. Otherwise, another Java installation
+might be loaded by Windows instead. Then, open a new command prompt (Winkey + R
+then type cmd) and run `java -version` to verify the installation.
+
+
+## Apache Maven
+
+[Apache Maven](https://maven.apache.org) is a software project management and
+comprehension tool. Based on the concept of a project object model (POM), Maven
+can manage a project's build, reporting and documentation from a central piece
+of information. Apache Maven v3.6.3 is available in
+[here](http://mirrors.up.pt/pub/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip).
+
+### Installation
+
+`unzip apache-maven-3.6.3-bin.zip`
+
+### Configuration
+
+On Unix-based Operating System (i.e., Linux, Solaris and Mac OS X) add the
+unpacked distribution's bin directory to your user PATH environment variable by
+executing the following command `export PATH=<___path___>/apache-maven-3.6.3/bin:$PATH`.
+And then, to verify that it has been properly installed and configured, run the
+following command on a new terminal window `mvn --version`. Note: the exported
+environment variables only live in the current session of your terminal window.
+If you open a new terminal, restart the computed, etc, would need to export the
+variables again. To avoid that, you can copy the above `export` commands to the
+bottom of your `~/.bashrc` file. Then, every time a new terminal window is
+created, or even if you restart your computer, this Maven installation would be
+the one available to the system.
+
+On Windows, add the unpacked distribution's directory to your user PATH
+environment variable by opening up the system properties (WinKey + Pause),
+selecting the "Advanced" tab, and the "Environment Variables" button, then
+adding to the PATH variable in the system variables the value, e.g.,
+`C:\<___path___>\apache-maven-3.6.3\bin`.  Make sure the new entry is the first
+one in the list. Otherwise, another Maven installation might be loaded by
+Windows instead. Then, open a new command prompt (Winkey + R
+then type cmd) and run `mvn --version` to verify the installation.
+
+
+## WildFly
+
+[WildFly](https://wildfly.org) is a flexible, lightweight, managed application
+runtime that helps you build amazing applications.
+
+### Installation
+
+[Java EE Full & Web Distribution v10.0.0.Final](https://download.jboss.org/wildfly/10.0.0.Final/wildfly-10.0.0.Final.zip)
+
+Unzip the downloaded file and navigate to the bin directory, e.g.,
+`cd wildfly-servlet-10.0.0.Final/bin`.
+
+### Configuration
+
+- Start a server by either running `./standalone.sh` on Unix / Linux / MacOS or
+  `standalone.bat` on Windows
+- Open a web browser and go to `http://localhost:8080`. This page includes links
+  to online documentation, quick start guides, forums and the administration
+  console.
+
+
+## Eclipse
+
+[Eclipse Oxygen](https://www.eclipse.org/downloads/packages/release/oxygen/3a)
+- [Unix / Linux](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-jee-oxygen-3a-linux-gtk-x86_64.tar.gz)
+- [MacOS](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-jee-oxygen-3a-macosx-cocoa-x86_64.dmg)
+- [Windows](https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/oxygen/3a/eclipse-jee-oxygen-3a-win32-x86_64.zip)
+
+
+### Installation
+
+On Windows unpack the `eclipse-jee-oxygen-3a-win32-x86_64.zip`.
+
+On MacOS execute the `eclipse-jee-oxygen-3a-macosx-cocoa-x86_64.dmg`.
+
+On Unix-based Operating System (e.g., Linux) unpack the `eclipse-jee-oxygen-3a-linux-gtk-x86_64.tar.gz`.
+
+
+### Git
+
+#### Installation
+
+Eclipse Oxygen supports Git out-of-box.
+
+#### Configuration
+
+- Open Eclipse
+- Click on Window -> Show View -> Other
+- Search for Git (at this point you should see a few Git views, e.g., Git Reflog,
+  Git Repositories, etc.)
+- Select and Open all of them
+
+
+### SonarLint
+
+[SonarLint](https://www.sonarlint.org) is an IDE extension that helps you detect
+and fix quality issues as you write code. Like a spell checker, SonarLint
+squiggles flaws so they can be fixed before committing code. You can get it
+directly from the Eclipse Marketplace, and it will then detect new bugs and
+quality issues as you code (Java, JavaScript, PHP, Python and HTML).
+
+#### Installation
+
+- Open Eclipse
+- Click on Help and then on Eclipse Marketplace
+- Search for SonarLint
+- Click Install next to the SonarLint solution (~2 minutes)
+- Follow the rest of the wizard
+
+#### Configuration
+
+- Open Eclipse
+- Click on Window -> Show View -> Other
+- Search for SonarLint (at this point you should see a few Sonar views, e.g.,
+  SonarLint Bindings, SonarLint Issue Locations, etc.)
+- Select and Open all of them
+
+
+### JBoss Tools Plugin
+
+[JBoss Tools Plugin](https://tools.jboss.org) provides, among others,
+integration between Eclipse and WildFly. More info in
+[here](https://www.baeldung.com/eclipse-wildfly-configuration).
+
+#### Installation
+
+- Open Eclipse
+- Click on Help and then on Eclipse Marketplace
+- Search for JBoss Tools
+- Click Install next to the JBoss Tools solution, e.g., JBoss Tools 4.5.3.Final (~10 minutes)
+- Follow the rest of the wizard
+
+#### Configuration
+
+- Open Eclipse
+- Click on Window -> Show View -> Other
+- Select on Server / Servers and then Open
+- In the new Servers tab, click `No servers are available. Click this link to create a new server...`
+- In the next step, expand the JBoss Community category and select the WildFly
+  version that matches with the WildFly installation (i.e., "WildFly 10.x"). For
+  the rest, simply follow the wizard.
+
+
+### JPA Diagram Editor
+
+[JPA Diagram Editor](https://wiki.eclipse.org/JPA_Diagram_Editor_Project). The
+JPA Diagram Editor enables the JPA developers to create, view, and edit their
+business data model as graphical diagram. More info on how to use it in
+[here](https://wiki.eclipse.org/JPA_Diagram_Editor_Project_Tutorial).
+
+#### Installation
+
+- Open Eclipse
+- Click on Help and then on Eclipse Marketplace
+- Search for JPA Diagram Editor
+- Click Install next to the JPA Diagram Editor solution, e.g., JPA Diagram Editor 1.1.1 (~3 minutes)
+- Follow the rest of the wizard
+
+#### Configuration
+
+- Open Eclipse
+- Click on Window -> Show View -> Other
+- Select JPA/JPA Details and JPA/JPA Structure and then Open
+
+
+### Dali Java Persistence Tools
+
+[Dali Java Persistence Tools](https://www.eclipse.org/webtools/dali) provides
+extensible frameworks and tools for the definition and editing of
+Object-Relational (O/R) mappings for Java Persistence API (JPA) entities. JPA
+mapping support focuses on minimizing the complexity of mapping by providing
+entity generation wizards, design-time validation, and a rich UI for entity and
+persistence unit configuration.
+
+#### Installation
+
+- Open Eclipse
+- Click on Help and then on Install New Software...
+- Add
+  - Name: Releases
+  - Location: http://download.eclipse.org/releases/oxygen
+  - OK
+- Search for `Dali`
+- Select all `Dali Java Persistence Tools` and follow the rest of the wizard
+
+
+
+Congratulations! All requirements have been properly installed and configured.
+Please continue to the [demonstration example](DEMO.md) document.

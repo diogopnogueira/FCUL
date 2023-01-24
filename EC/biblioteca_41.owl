@@ -1,0 +1,1469 @@
+Prefix: : <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41>
+
+
+AnnotationProperty: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled>
+
+    
+AnnotationProperty: rdfs:comment
+
+    
+AnnotationProperty: rdfs:label
+
+    
+Datatype: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#inteiroMaiorQue500>
+
+    EquivalentTo: 
+        xsd:int[> "500"^^xsd:int]
+    
+    
+Datatype: xsd:boolean
+
+    
+Datatype: xsd:int
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#bibliotecaTemExemplar>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#coAutores>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemContribuicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemVersao>
+
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehAutorDeLivro>
+
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorLivro>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehJornal>
+
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceAPublicacao>
+    
+    Characteristics: 
+        Functional
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehLivro>
+
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceAPublicacao>
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehRevista>
+
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceAPublicacao>
+    
+    Characteristics: 
+        Functional
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#emLinguasDiferentes>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#estadoDaRequisicaoDoExemplar>
+
+    SubPropertyChain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temRequisicao> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstadoDeRequisicao>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EstadoDeRequisicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#estatutoDeExemplarDaPessoa>
+
+    SubPropertyChain: 
+         inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temUtente>) o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplar> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstatuto>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#estatutoDoExemplarDaRequisicao>
+
+    SubPropertyChain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplar> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstatuto>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#exemplarTemEdicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#livroTemContribuicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#periodoDeContribuicao>
+
+    SubPropertyChain: 
+         inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>) o  inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemContribuicao>) o  inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoPeriodicaTemEdicao>) o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temPeriodo>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PeriodoDePublicacao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceALivro>
+
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVolume>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceAPublicacao>
+
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoTemExemplar>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoPeriodicaTemEdicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoTemExemplar>
+
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceAPublicacao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoTemRequisicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#requisicaoTemPublicacao>
+
+    SubPropertyChain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplar> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#exemplarTemEdicao> o  inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoPeriodicaTemEdicao>)
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorLivro>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehAutorDeLivro>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temBiblioteca>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temDiretor>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diretor>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemVersao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditor>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditora>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao> or <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstadoDeRequisicao>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EstadoDeRequisicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstatuto>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplar>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temRequisicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplarComEstatuto>
+
+    SubPropertyChain: 
+         inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceAPublicacao>) o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstatuto>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temGeneroTextual>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GeneroTextual>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Lingua>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLinguagemLivro>
+
+    SubPropertyChain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Lingua>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temNumeroPaginasDoLivro>
+
+    SubPropertyChain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao> o <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temNumeroPaginasDoLivro>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroDePaginas> some xsd:int
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temPeriodo>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PeriodoDePublicacao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temPrimeiraEdicao>
+
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PrimeiraEdicao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temRequisicao>
+
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplar>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temTradutor>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tradutor>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temUtente>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Utente>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao>
+
+    Characteristics: 
+        Transitive
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoOriginal>
+
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginal>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoTraduzida>
+
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao>
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoTraduzida>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVolume>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume>
+    
+    InverseOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#pertenceALivro>
+    
+    
+ObjectProperty: owl:topObjectProperty
+
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataDeFundacao>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temData>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataEdicao>
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataEdicao>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temData>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataDeFundacao>
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca> or <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora> or <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroDePaginas>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Range: 
+        xsd:int
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroEdicao>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Range: 
+        xsd:int
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAreaDeEstudo>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temData>
+
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temISBN>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>
+
+    Domain: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao> or <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+    
+    Range: 
+        xsd:string
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Atrasados>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#estatutoDeExemplarDaPessoa> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Atrasado>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor2Livros>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehAutorDeLivro> min 2 <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#AutorEmPDeL>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehAutorDeLivro> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>)
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#periodoDeContribuicao> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#bibliotecaTemExemplar> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>)
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>)
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diretor>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemContribuicao> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EmPT500>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao> some (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao> some (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroDePaginas> only <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#inteiroMaiorQue500>)))
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLinguagemLivro> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EstadoDeRequisicao>
+
+    EquivalentTo: 
+        {<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Ativa> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Inativa>}
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>
+
+    EquivalentTo: 
+        {<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Atrasado> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livre> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisitado> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Restrito>}
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstatuto> exactly 1 <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GeneroTextual>
+
+    EquivalentTo: 
+        {<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ArtigoOpiniao> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PoesiaEpica> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Romance> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tecnico>}
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Jornal>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Lingua>
+
+    EquivalentTo: 
+        {<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Alemao> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GregoAntigo> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>}
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>,
+        (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorLivro> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>) or (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditor> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>),
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#livroTemContribuicao> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoPeriodicaTemEdicao> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temDiretor> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diretor>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PeriodoDePublicacao>
+
+    EquivalentTo: 
+        {<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semestral> , <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>}
+    
+    SubClassOf: 
+         inverse (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temPeriodo>) only <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Populares>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>
+         and ((<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplarComEstatuto> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Atrasado>) or (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplarComEstatuto> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livre>) or (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplarComEstatuto> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisitado>))
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoTemRequisicao> min 3 <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PrimeiraEdicao>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroEdicao> value "1"^^xsd:int
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+         and (not (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#estatutoDoExemplarDaRequisicao> value <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Restrito>))
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#requisicaoTemPublicacao> only <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NaoPeriodica>)
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temUtente> exactly 1 <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Utente>)
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Revista>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Periodica>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tradutor>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Traduzidos>
+
+    EquivalentTo: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+         and (<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoTraduzida> min 1 <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoTraduzida>)
+    
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Utente>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao> some <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EmPT500>, <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Traduzidos>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginal>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoTraduzida>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoTraduzida>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>
+    
+    DisjointWith: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginal>
+    
+    
+Class: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    
+Class: owl:Thing
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Alemao>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GregoAntigo>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Amadeu>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Utente>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Amadeu"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#AndreasKlotsch>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tradutor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Andreas Klotsch"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ArtigoCovid>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#CaiRun>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temGeneroTextual>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ArtigoOpiniao>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "É óbvio para todos o contributo da China para a luta global contra a
+pandemia da covid-19"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ArtigoOpiniao>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Ativa>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Inativa>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Atrasado>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#BibliotecaCentral>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#bibliotecaTemExemplar>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar1Odisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#bibliotecaTemExemplar>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar2Odisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#bibliotecaTemExemplar>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ExemplarMemorialConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Biblioteca Central"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#CaiRun>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Cai Run"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ChiaraGhidini>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Chiara Ghidini"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao10960>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ArtigoCovid>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataEdicao>  "27 de Abril de 2020"^^xsd:string,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroEdicao>  "10960"^^xsd:int
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao1MemorialDoConvento>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditora>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EditorialCaminho>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataEdicao>  "1982"^^xsd:string,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroEdicao>  "1"^^xsd:int
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao2018MemorialAlemao>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditora>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#HoffmanUndCampe>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataEdicao>  "2018"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EdicaoOdisseia2018>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditora>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#QuetzalEditores>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataEdicao>  "2018"^^xsd:string,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroDePaginas>  "688"^^xsd:int,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temISBN>  "9789897224386"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EditorialCaminho>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataDeFundacao>  "1975"^^xsd:string,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Editorial Caminho"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar1Odisseia>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehLivro>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Odisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#exemplarTemEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EdicaoOdisseia2018>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar2Odisseia>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehLivro>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Odisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#exemplarTemEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EdicaoOdisseia2018>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ExemplarMemorialConvento>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehLivro>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#MemorialDoConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#exemplarTemEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao1MemorialDoConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstatuto>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisitado>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#FredericoLourenco>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tradutor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Frederico Lourenço"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GregoAntigo>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Alemao>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#HeikoPaulheim>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Heiko Paulheim"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#HoffmanUndCampe>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Hoffman und Campe"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Homero>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Inativa>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Ativa>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#JoseSaramago>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "José Saramago"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livre>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ManuelCarvalho>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diretor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Manuel Carvalho"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#MariaMaleshkova>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Maria Maleshkova"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#MemorialDoConvento>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#livroTemContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#RomanceMemorial>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorLivro>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#JoseSaramago>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoOriginal>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginalMemorialDoConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoTraduzida>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoAlemaMemorialDoConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "Memorial do Convento"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NicolasHeist>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Nicholas Heist"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Odisseia>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#livroTemContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PoemaOdisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorLivro>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Homero>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoOriginal>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginalOdisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersaoTraduzida>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoPortuguesaOdisseia>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "Odisseia"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#OlafHartig>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Olaf Hartig"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PoemaOdisseia>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Homero>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temGeneroTextual>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PoesiaEpica>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PoesiaEpica>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Alemao>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GregoAntigo>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Publico>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Jornal>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoPeriodicaTemEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao10960>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temDiretor>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ManuelCarvalho>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temPeriodo>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "Público"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#QuetzalEditores>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#dataDeFundacao>  "1987"^^xsd:string,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Quetzal Editores"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#RequisicaoAmadeu>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temBiblioteca>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#BibliotecaCentral>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEstadoDeRequisicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Ativa>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temExemplar>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ExemplarMemorialConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temUtente>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Amadeu>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisitado>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Restrito>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Romance>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#RomanceMemorial>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#JoseSaramago>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temGeneroTextual>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Romance>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semanal>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Semestral>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Springer>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#nome>  "Springer"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tecnico>
+
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TheSemanticWeb>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livros>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditor>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ChiaraGhidini>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditor>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#MariaMaleshkova>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditor>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#OlafHartig>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEditora>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Springer>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVolume>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume1Semantic>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVolume>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume2Semantic>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAreaDeEstudo>  "Ciência da Computação"^^xsd:string,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "The Semantic Web – ISWC 2019"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Trimestral>
+
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Anual>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Bimestral>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diaria>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Mensal>,
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Quizenal>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#UncoveringTheSemantics>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#HeikoPaulheim>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temAutorContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NicolasHeist>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temGeneroTextual>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tecnico>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "Uncovering the Semantics of Wikipedia Categories"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoAlemaMemorialDoConvento>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoTraduzida>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao2018MemorialAlemao>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Alemao>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temTradutor>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#AndreasKlotsch>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#titulo>  "Das Memorial"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginalMemorialDoConvento>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginal>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao1MemorialDoConvento>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginalOdisseia>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginal>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GregoAntigo>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temData>  "seculo VIII (a.C)"^^xsd:string
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoPortuguesaOdisseia>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoTraduzida>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EdicaoOdisseia2018>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Portugues>,
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temTradutor>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#FredericoLourenco>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume1Semantic>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume>
+    
+    Facts:  
+     <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#livroTemContribuicao>  <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#UncoveringTheSemantics>
+    
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume2Semantic>
+    
+    
+Individual: <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume2Semantic>
+
+    Types: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume>
+    
+    DifferentFrom: 
+        <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Volume1Semantic>
+    
+    
+DisjointClasses: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Autor>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Diretor>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editor>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tradutor>
+
+DisjointClasses: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Biblioteca>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Contribuicao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Editora>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EstadoDeRequisicao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Estatuto>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#GeneroTextual>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Lingua>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PeriodoDePublicacao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisicao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ArtigoOpiniao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#PoesiaEpica>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Romance>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Tecnico>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Atrasado>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Livre>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Requisitado>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Restrito>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#CaiRun>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#HeikoPaulheim>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Homero>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#JoseSaramago>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#NicolasHeist>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ChiaraGhidini>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#MariaMaleshkova>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#OlafHartig>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao10960>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao1MemorialDoConvento>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao2018MemorialAlemao>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EdicaoOdisseia2018>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#EditorialCaminho>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#HoffmanUndCampe>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#QuetzalEditores>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Springer>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar1Odisseia>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Exemplar2Odisseia>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ExemplarMemorialConvento>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#MemorialDoConvento>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Odisseia>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TheSemanticWeb>
+
+DifferentIndividuals: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoAlemaMemorialDoConvento>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginalMemorialDoConvento>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoOriginalOdisseia>,<http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#VersaoPortuguesaOdisseia>
+
+Rule: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>(?<#e1>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Edicao>(?<#e2>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemVersao>(?<#e1>, ?<#v1>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#edicaoTemVersao>(?<#e2>, ?<#v2>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao>(?<#l1>, ?<#v1>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temVersao>(?<#l2>, ?<#v2>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>(?<#v1>, ?<#li1>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temLingua>(?<#v2>, ?<#li2>),  SameAs (?<#l1>, ?<#l2>),  DifferentFrom (?<#v1>, ?<#v2>),  DifferentFrom (?<#e1>, ?<#e2>),  DifferentFrom (?<#li1>, ?<#li2>) -> <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#emLinguasDiferentes>(?<#e1>, ?<#e2>)
+
+Rule: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>(?<#p1>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Pessoa>(?<#p2>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehAutorDeLivro>(?<#p1>, ?<#l1>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#ehAutorDeLivro>(?<#p2>, ?<#l2>),  DifferentFrom (?<#p1>, ?<#p2>),  SameAs (?<#l1>, ?<#l2>) -> <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#coAutores>(?<#p1>, ?<#p2>)
+
+Rule: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#TipoDePublicacao>(?<#p>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoTemExemplar>(?<#p>, ?<#e>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temRequisicao>(?<#e>, ?<#r>) -> <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#publicacaoTemRequisicao>(?<#p>, ?<#r>)
+
+Rule: 
+    <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#Versao>(?<#v>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temEdicao>(?<#v>, ?<#e>), <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#numeroEdicao>(?<#e>, 1) -> <http://www.semanticweb.org/diogo/ontologies/2020/4/biblioteca_41#temPrimeiraEdicao>(?<#v>, ?<#e>)
+

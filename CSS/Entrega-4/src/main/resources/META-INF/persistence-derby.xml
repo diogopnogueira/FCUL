@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="domain-model-jpa" transaction-type="RESOURCE_LOCAL">
+        <class>business.Facility</class>
+        <class>business.lesson.Lesson</class>
+        <class>business.occupation.Occupation</class>
+        <class>business.sportModality.SportModality</class>
+        <class>business.LocalDateAttributeConverter</class>
+        <class>business.LocalTimeAttributeConverter</class>
+        <class>business.user.User</class>
+        <class>business.registration.Registration</class>
+        <class>business.registration.RegularRegistration</class>
+        <class>business.registration.SingleRegistration</class>
+
+        <shared-cache-mode>NONE</shared-cache-mode> <!-- para permitir fazer testes de integração usando o DBSetup -->
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:derby:data/derby/css025;create=true"/>
+            <property name="javax.persistence.jdbc.user" value="css025"/>
+            <property name="javax.persistence.jdbc.password" value="css025db"/>
+            <property name="javax.persistence.jdbc.password" value="css025db"/>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
